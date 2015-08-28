@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-vungle" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova Vungle</name>
+  <description>Vungle Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,vungle</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- Vungle SDK -->
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/__vungle.db" />
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_close.png" />
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_cta.png" />
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_off.png" />
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_on.png" />
+    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_privacy.png" />
+
+    <framework src="src/ios/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- / Vungle SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AdSupport.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="AVFoundation.framework" />
+    <framework src="CFNetwork.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="Foundation.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="QuartzCore.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="UIKit.framework" />
+
+    <framework src="libz.dylib" /> 
+    <framework src="libsqlite3.dylib" /> 
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+      <service android:name="com.vungle.publisher.VungleService"/>
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- Vungle SDK -->
+    <source-file src="src/android/dagger-1.2.2.jar" target-dir="libs" />
+    <source-file src="src/android/javax.inject-1.jar" target-dir="libs" />
+    <source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />
+    <source-file src="src/android/vungle-publisher-adaptive-id-3.3.0.jar" target-dir="libs" />
+
+    <framework src="com.android.support:support-v4:18.0.0" />
+    <!-- / Vungle SDK -->
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>

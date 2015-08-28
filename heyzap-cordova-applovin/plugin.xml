@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-applovin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova AppLovin</name>
+  <description>AppLovin Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,applovin</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- AppLovin SDK -->
+    <header-file src="src/ios/headers/ALAd.h" />
+    <header-file src="src/ios/headers/ALAdDisplayDelegate.h" />
+    <header-file src="src/ios/headers/ALAdLoadDelegate.h" />
+    <header-file src="src/ios/headers/ALAdRewardDelegate.h" />
+    <header-file src="src/ios/headers/ALAdService.h" />
+    <header-file src="src/ios/headers/ALAdSize.h" />
+    <header-file src="src/ios/headers/ALAdType.h" />
+    <header-file src="src/ios/headers/ALAdUpdateDelegate.h" />
+    <header-file src="src/ios/headers/ALAdVideoPlaybackDelegate.h" />
+    <header-file src="src/ios/headers/ALAdView.h" />
+    <header-file src="src/ios/headers/ALErrorCodes.h" />
+    <header-file src="src/ios/headers/ALIncentivizedInterstitialAd.h" />
+    <header-file src="src/ios/headers/ALInterstitialAd.h" />
+    <header-file src="src/ios/headers/ALNativeAd.h" />
+    <header-file src="src/ios/headers/ALNativeAdLoadDelegate.h" />
+    <header-file src="src/ios/headers/ALNativeAdPrecacheDelegate.h" />
+    <header-file src="src/ios/headers/ALNativeAdService.h" />
+    <header-file src="src/ios/headers/ALNullabilityAnnotations.h" />
+    <header-file src="src/ios/headers/ALPostbackDelegate.h" />
+    <header-file src="src/ios/headers/ALPostbackService.h" />
+    <header-file src="src/ios/headers/ALSdk.h" />
+    <header-file src="src/ios/headers/ALSdkSettings.h" />
+    <header-file src="src/ios/headers/ALSwiftHeaders.h" />
+    <header-file src="src/ios/headers/ALTargetingData.h" />
+
+    <source-file src="src/ios/libAppLovinSdk.a" framework="true" />
+    <!-- / AppLovin SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AdSupport.framework" />
+    <framework src="AVFoundation.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="UIKit.framework" />
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" />
+      <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" />
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- AppLovin SDK -->
+    <source-file src="src/android/applovin-sdk-6.0.0.jar" target-dir="libs" />
+    <!-- / AppLovin SDK -->
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>

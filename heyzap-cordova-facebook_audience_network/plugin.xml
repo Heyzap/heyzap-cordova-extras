@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-facebook_audience_network" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova Facebook Audience Network</name>
+  <description>Facebook Audience Network Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,facebook_audience_network</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- Facebook Audience Network SDK -->
+    <framework src="src/ios/FBAudienceNetwork.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- / Facebook Audience Network SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AdSupport.framework" />
+    <framework src="AVFoundation.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreImage.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="CoreMotion.framework" />
+    <framework src="Foundation.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="Security.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="UIKit.framework" />
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />       
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- Facebook Audience Network SDK -->
+    <source-file src="src/android/AudienceNetwork.jar" target-dir="libs" />
+    <!-- / Facebook Audience Network SDK -->
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>

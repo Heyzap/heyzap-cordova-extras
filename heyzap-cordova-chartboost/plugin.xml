@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-chartboost" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova Chartboost</name>
+  <description>Chartboost Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,chartboost</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- Chartboost SDK -->
+    <framework src="src/ios/Chartboost.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- / Chartboost SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AVFoundation.framework" />
+    <framework src="CoreData.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="QuartzCore.framework" />
+
+    <framework src="AdSupport.framework" weak="true" />
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+      <activity android:name="com.chartboost.sdk.CBImpressionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:excludeFromRecents="true" />
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- Chartboost SDK -->
+    <source-file src="src/android/chartboost.jar" target-dir="libs" />
+
+    <framework src="com.google.android.gms:play-services:+" />
+    <!-- / Chartboost SDK -->
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>

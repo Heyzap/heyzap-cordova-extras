@@ -1,0 +1,46 @@
+{
+  "name": "heyzap-cordova-applovin",
+  "version": "1.0.0",
+  "description": "AppLovin Cordova plugin for the Heyzap Cordova Plugin",
+  "cordova": {
+    "id": "heyzap-cordova-applovin",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heyzap/heyzap-cordova-extras.git"
+  },
+  "keywords": [
+    "cordova",
+    "heyzap",
+    "phonegap",
+    "sdk",
+    "ad",
+    "mobile",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "mediation",
+    "applovin"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=3.8.0"
+    }
+  ],
+  "author": "Heyzap Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Heyzap/heyzap-cordova-extras/issues",
+    "email": "support@heyzap.com"
+  },
+  "homepage": "https://developers.heyzap.com/docs/cordova_sdk_setup_and_requirements#step-2-choose-your-3rdparty-sdks-optional"
+}

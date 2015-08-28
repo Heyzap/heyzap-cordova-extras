@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-admob" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova AdMob</name>
+  <description>AdMob Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,admob</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- AdMob SDK -->
+    <header-file src="src/ios/MediationExtras/HZAdMobBannerSupport.h" compiler-flags="-fmodules" />
+    <source-file src="src/ios/MediationExtras/HZAdMobBannerSupport.m" compiler-flags="-fmodules" />
+
+    <framework src="src/ios/GoogleMobileAds.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- / AdMob SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AudioToolbox.framework" />
+    <framework src="AVFoundation.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreMedia.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="EventKit.framework" />
+    <framework src="EventKitUI.framework" />
+    <framework src="MessageUI.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+
+    <framework src="AdSupport.framework" weak="true" />
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+      
+      <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+
+    <framework src="com.google.android.gms:play-services:+" />
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>

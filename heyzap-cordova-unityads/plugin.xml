@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="heyzap-cordova-unityads" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>Heyzap Cordova UnityAds</name>
+  <description>UnityAds Cordova plugin for the Heyzap Cordova Plugin</description>
+  <author>Heyzap Inc.</author>
+  <license>Heyzap</license>
+  <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,unityads</keywords>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.8.0" />
+  </engines>
+
+  <!-- iOS -->
+  <platform name="ios">
+    
+    <!-- Hooks -->
+    <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+    <!-- / Hooks -->
+    
+    <!-- UnityAds SDK -->
+    <resource-file src="src/ios/UnityAds.bundle" />
+    <framework src="src/ios/UnityAds.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- / UnityAds SDK -->
+
+    <!-- External Frameworks -->
+    <framework src="AdSupport.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="StoreKit.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="CoreTelephony.framework" />
+    <!-- / External Frameworks -->
+
+  </platform>
+  <!-- / iOS -->
+
+  <!-- Android -->
+  <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"  android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:hardwareAccelerated="true" />
+    </config-file>
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- UnityAds SDK -->
+    <source-file src="src/android/unityads.jar" target-dir="libs" />
+    <!-- / UnityAds SDK -->
+
+  </platform>
+  <!-- / Android -->
+
+</plugin>
