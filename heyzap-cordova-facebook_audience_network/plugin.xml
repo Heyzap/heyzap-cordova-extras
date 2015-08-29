@@ -32,6 +32,7 @@
     <framework src="CoreMotion.framework" />
     <framework src="Foundation.framework" />
     <framework src="MediaPlayer.framework" />
+    <framework src="OpenGLES.framework" />
     <framework src="Security.framework" />
     <framework src="StoreKit.framework" />
     <framework src="SystemConfiguration.framework" />
