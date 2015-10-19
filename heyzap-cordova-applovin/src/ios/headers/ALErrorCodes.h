@@ -47,3 +47,6 @@
 // Indicates that the user exited out of the video early.
 // You may or may not wish to grant a reward depending on your preference.
 #define kALErrorCodeIncentivizedUserClosedVideo -600
+
+// Indicates that a postback URL you attempted to dispatch was empty or nil.
+#define kALErrorCodeInvalidURL -900

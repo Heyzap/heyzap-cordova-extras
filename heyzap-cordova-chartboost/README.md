@@ -5,8 +5,8 @@ This is a custom Apache Cordova plugin for Chartboost to be used with the [Heyza
 
 SDK Verisons
 ------------
-- iOS: 5.5.0
-- Android: 5.1.0
+- iOS: 6.0.0
+- Android: 5.5.3
 
 Installing:
 ```

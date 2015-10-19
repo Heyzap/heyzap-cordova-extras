@@ -14,6 +14,24 @@
 
   <!-- iOS -->
   <platform name="ios">
+  
+    <!-- iOS 9 requires apps to use HTTPS; some networks require you to disable App Transport Security to workaround this. -->
+    <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
+    
+    <!-- URL scheme required by network -->
+    <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+      <array>
+        <string>fb</string>
+        <string>instagram</string>
+        <string>tumblr</string>
+        <string>twitter</string>
+      </array>
+    </config-file>
     
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />

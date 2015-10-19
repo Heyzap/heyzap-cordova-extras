@@ -31,6 +31,8 @@
     <header-file src="src/ios/headers/ALAdVideoPlaybackDelegate.h" />
     <header-file src="src/ios/headers/ALAdView.h" />
     <header-file src="src/ios/headers/ALErrorCodes.h" />
+    <header-file src="src/ios/headers/ALEventService.h" />
+    <header-file src="src/ios/headers/ALEventTypes.h" />
     <header-file src="src/ios/headers/ALIncentivizedInterstitialAd.h" />
     <header-file src="src/ios/headers/ALInterstitialAd.h" />
     <header-file src="src/ios/headers/ALNativeAd.h" />
@@ -55,6 +57,7 @@
     <framework src="CoreGraphics.framework" />
     <framework src="CoreMedia.framework" />
     <framework src="MediaPlayer.framework" />
+    <framework src="StoreKit.framework" />
     <framework src="SystemConfiguration.framework" />
     <framework src="UIKit.framework" />
     <!-- / External Frameworks -->
@@ -83,7 +86,7 @@
     <!-- / Native app manifest - Application Tag -->
     
     <!-- AppLovin SDK -->
-    <source-file src="src/android/applovin-sdk-6.0.0.jar" target-dir="libs" />
+    <source-file src="src/android/applovin-sdk-6.1.4.jar" target-dir="libs" />
     <!-- / AppLovin SDK -->
 
   </platform>

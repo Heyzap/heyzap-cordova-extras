@@ -14,6 +14,14 @@
 
   <!-- iOS -->
   <platform name="ios">
+
+    <!-- iOS 9 requires apps to use HTTPS; some networks require you to disable App Transport Security to workaround this. -->
+    <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
     
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
@@ -43,10 +51,16 @@
     <framework src="StoreKit.framework" />
     <framework src="SystemConfiguration.framework" />
     <framework src="UIKit.framework" />
+    <framework src="WebKit.framework" />
 
     <framework src="libz.dylib" /> 
     <framework src="libsqlite3.dylib" /> 
     <!-- / External Frameworks -->
+
+    <info>
+      You may need to disable bitcode in your Xcode project settings before building the app.
+      In the Xcode project explorer click on your app project, Go to the 'Build Settings' tab and change 'Enable Bitcode' to 'No' for all the dropdowns that aren't disabled.
+    </info>
 
   </platform>
   <!-- / iOS -->
@@ -74,7 +88,7 @@
     <source-file src="src/android/dagger-1.2.2.jar" target-dir="libs" />
     <source-file src="src/android/javax.inject-1.jar" target-dir="libs" />
     <source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />
-    <source-file src="src/android/vungle-publisher-adaptive-id-3.3.0.jar" target-dir="libs" />
+    <source-file src="src/android/vungle-publisher-adaptive-id-3.3.2.jar" target-dir="libs" />
 
     <framework src="com.android.support:support-v4:18.0.0" />
     <!-- / Vungle SDK -->

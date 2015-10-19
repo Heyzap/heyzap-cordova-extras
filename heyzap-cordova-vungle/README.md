@@ -5,13 +5,17 @@ This is a custom Apache Cordova plugin for Vungle to be used with the [Heyzap Co
 
 SDK Verisons
 ------------
-- iOS: 3.1.2
-- Android: 3.3.1
+- iOS: 3.2.0
+- Android: 3.3.2
 
 Installing:
 ```
 cordova plugin add https://github.com/Heyzap/heyzap-cordova-extras.git#:heyzap-cordova-vungle
 ```
+
+Additional Steps:
+You may need to disable bitcode in your Xcode project settings before building the app.
+In the Xcode project explorer click on your app project, Go to the 'Build Settings' tab and change 'Enable Bitcode' to 'No' for all the dropdowns that aren't disabled.
 
 Supported Platforms
 -------------------
