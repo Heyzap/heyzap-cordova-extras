@@ -23,8 +23,8 @@
  * Dispatch a postback to a given URL.
  *
  * @param targetUrl URL to call via HTTP GET.
- * @param listener Optional listener. May be nil.
+ * @param delegate Optional postback delegate. May be nil.
  */
--(void) dispatchPostbackAsync: (alnonnull NSURL*) targetURL andNotify: (alnullable id <ALPostbackDelegate>) listener;
+-(void) dispatchPostbackAsync: (alnonnull NSURL*) targetURL andNotify: (alnullable id <ALPostbackDelegate>) delegate;
 
 @end

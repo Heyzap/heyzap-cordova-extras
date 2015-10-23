@@ -68,7 +68,7 @@
 /**
  *  The click URL the native ad redirects to.
  */
-@property (copy, nonatomic, readonly)   NSURL* __alnonnull clickURL;
+@property (copy, nonatomic, readonly)   NSURL* __alnonnull clickURL __deprecated_msg("Invoke method -launchClickTarget rather than opening this URL yourself.");
 
 /**
  *  The video begin tracking URL of the native ad.
@@ -96,5 +96,13 @@
  *  Note that if this native ad does not contain a video, this property will always be NO.
  */
 @property (assign, atomic, readonly, getter=isVideoPrecached) BOOL videoPrecached;
+
+/**
+ * Handle a click on this native ad by launching the ad's destination.
+ *
+ * You should call this method anytime the user taps anywhere on your native ad.
+ * Calling this method launches Safari or the App Store and will result in your app being paused.
+ */
+-(void) launchClickTarget;
 
 @end

@@ -5,13 +5,17 @@ This is a custom Apache Cordova plugin for AdMob/Google Mobile Ads to be used wi
 
 SDK Verisons
 ------------
-- iOS: 7.3.1
+- iOS: 7.5.1
 - Android: Latest Google Play Services
 
 Installing:
 ```
 cordova plugin add https://github.com/Heyzap/heyzap-cordova-extras.git#:heyzap-cordova-admob
 ```
+
+Additional Steps:
+You may need to disable bitcode in your Xcode project settings before building the app.
+In the Xcode project explorer click on your app project, Go to the 'Build Settings' tab and change 'Enable Bitcode' to 'No' for all the dropdowns that aren't disabled.
 
 Supported Platforms
 -------------------

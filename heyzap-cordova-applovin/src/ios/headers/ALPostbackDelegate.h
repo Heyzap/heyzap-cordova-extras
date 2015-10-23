@@ -29,6 +29,6 @@
  * @param postbackURL URL which was notified.
  * @param errorCode HTTP status code received, if any; otherwise a negative constant.
  */
--(void) postbackService: (alnonnull ALPostbackService*) postbackService didFailToExecutePostback: (alnonnull NSURL*) postbackURL errorCode: (NSInteger) errorCode;
+-(void) postbackService: (alnonnull ALPostbackService*) postbackService didFailToExecutePostback: (alnullable NSURL*) postbackURL errorCode: (NSInteger) errorCode;
 
 @end

@@ -32,4 +32,6 @@
 
 -(void) precacheResourcesForNativeAd: (alnonnull ALNativeAd*) ad andNotify: (alnullable id <ALNativeAdPrecacheDelegate>) delegate;
 
+- (alnullable id)init __attribute__((unavailable("Don't instantiate ALNativeAdService, access one via [sdk nativeAdService] instead.")));
+
 @end

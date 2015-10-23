@@ -13,6 +13,7 @@
 #import "ALNativeAdService.h"
 #import "ALTargetingData.h"
 #import "ALPostbackService.h"
+#import "ALEventService.h"
 
 #import "ALNullabilityAnnotations.h"
 #import "ALErrorCodes.h"
@@ -84,6 +85,13 @@
  * @return Postback service. Guaranteed not to be null.
  */
 @property (strong, nonatomic, readonly) ALPostbackService*  __alnonnull postbackService;
+
+/**
+ * Get an instance of the AppLovin event service. This service is used to track post-install user events.
+ *
+ * @return Event service. Guaranteed not to be null.
+ */
+@property (strong, nonatomic, readonly) ALEventService* __alnonnull eventService;
 
 /**
  * @name Custom User Targeting
