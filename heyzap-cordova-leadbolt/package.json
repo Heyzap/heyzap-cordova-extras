@@ -1,6 +1,6 @@
 {
   "name": "heyzap-cordova-leadbolt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Leadbolt Cordova plugin for the Heyzap Cordova Plugin",
   "cordova": {
     "id": "heyzap-cordova-leadbolt",

@@ -20,4 +20,4 @@ Supported Platforms
 
 Documentation
 -------------
-Please visit our [documentation page](https://developers.heyzap.com/docs/cordova_sdk_setup_and_requirements#step-2-choose-your-3rdparty-sdks-optional) for guides on how to integrate heyzap with your Cordova app.
+Please visit our [documentation page](https://github.com/Heyzap/heyzap-cordova/blob/master/docs/setup_and_requirements.md) for guides on how to integrate heyzap with your Cordova app.
