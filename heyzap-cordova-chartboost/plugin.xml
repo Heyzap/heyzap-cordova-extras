@@ -7,10 +7,18 @@
   <license>Heyzap</license>
   <keywords>cordova,heyzap,phonegap,sdk,ad,mobile,mediation,chartboost</keywords>
 
+  <dependency id="heyzap-cordova" url="https://github.com/heyzap/heyzap-cordova" />
+
   <engines>
     <engine name="cordova-android" version=">=4.0.0" />
     <engine name="cordova-ios" version=">=3.8.0" />
   </engines>
+
+  <!-- Main Object -->
+  <js-module src="www/ads/Chartboost.js" name="ads.Chartboost">
+    <merges target="HeyzapAds.Chartboost" />
+  </js-module>
+  <!-- / Main Object -->
 
   <!-- iOS -->
   <platform name="ios">
@@ -18,6 +26,20 @@
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
+
+    <!-- Modify Cordova config -->
+    <config-file target="config.xml" parent="/*">
+      <feature name="Chartboost">
+        <param name="ios-package" value="CDVHZChartboost"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <!-- / Modify Cordova config -->
+
+    <!-- Adapters -->
+    <header-file src="src/ios/CDVHZChartboost.h" />
+    <source-file src="src/ios/CDVHZChartboost.m" />
+    <!-- / Adapters -->
     
     <!-- Chartboost SDK -->
     <framework src="src/ios/Chartboost.framework" custom="true" compiler-flags="-fmodules" />
@@ -42,6 +64,15 @@
   <!-- Android -->
   <platform name="android">
 
+    <!-- Modify Cordova config -->
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Chartboost">
+        <param name="android-package" value="com.heyzap.cordova.ads.CDVChartboost"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <!-- / Modify Cordova config -->
+
     <!-- Native app manifest -->
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -64,9 +95,12 @@
     
     <!-- Chartboost SDK -->
     <source-file src="src/android/chartboost.jar" target-dir="libs" />
-
     <framework src="com.google.android.gms:play-services:+" />
     <!-- / Chartboost SDK -->
+
+    <!-- Adapters -->
+    <source-file src="src/android/com/heyzap/cordova/ads/CDVChartboost.java" target-dir="src/com/heyzap/cordova/ads" />
+    <!-- / Adapters -->
 
   </platform>
   <!-- / Android -->
