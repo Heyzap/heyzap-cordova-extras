@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-unityads" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-unityads" version="1.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova UnityAds</name>
   <description>UnityAds Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -38,27 +38,10 @@
   <!-- Android -->
   <platform name="android">
 
-    <!-- Native app manifest -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    </config-file>
-    <!-- / Native app manifest -->
-    
-    <!-- Native app manifest - Application Tag -->
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <activity
-            android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
-            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-            android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            tools:ignore="UnusedAttribute" />
-    </config-file>
-    <!-- / Native app manifest - Application Tag -->
-    
+    <framework src="src/android/unity-ads.gradle" custom="true" type="gradleReference" />
+
     <!-- UnityAds SDK -->
-    <source-file src="src/android/android_unityads_4.0.1.jar" target-dir="libs" />
+    <source-file src="src/android/unity-ads-1.5.6.aar" target-dir="libs" />
     <!-- / UnityAds SDK -->
 
   </platform>
