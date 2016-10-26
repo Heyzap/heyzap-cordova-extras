@@ -14,7 +14,7 @@
 
   <!-- iOS -->
   <platform name="ios">
-  
+
     <!-- iOS 9 requires apps to use HTTPS; some networks require you to disable App Transport Security to workaround this. -->
     <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
       <dict>
@@ -22,7 +22,7 @@
         <true/>
       </dict>
     </config-file>
-    
+
     <!-- URL scheme required by network -->
     <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
       <array>
@@ -32,13 +32,13 @@
         <string>twitter</string>
       </array>
     </config-file>
-    
+
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
-    
+
     <!-- AdColony SDK -->
-    <framework src="src/ios/AdColony.framework" custom="true" compiler-flags="-fmodules" />
+    <framework src="src/ios/Fyber_AdColony_2.6.2-r1.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / AdColony SDK -->
 
     <!-- External Frameworks -->
@@ -68,31 +68,9 @@
   <!-- Android -->
   <platform name="android">
 
-    <!-- Native app manifest -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    </config-file>
-    <!-- / Native app manifest -->
-    
-    <!-- Native app manifest - Application Tag -->
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.jirbo.adcolony.AdColonyOverlay"
-      android:configChanges="keyboardHidden|orientation|screenSize"
-      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-      <activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
-      android:configChanges="keyboardHidden|orientation|screenSize"
-      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-      <activity android:name="com.jirbo.adcolony.AdColonyBrowser"
-      android:configChanges="keyboardHidden|orientation|screenSize"
-      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-    </config-file>
-    <!-- / Native app manifest - Application Tag -->
-    
+    <framework src="src/android/adcolony.gradle" custom="true" type="gradleReference" />
     <!-- AdColony SDK -->
-    <source-file src="src/android/adcolony.jar" target-dir="libs" />
-    <source-file src="src/android/armeabi/libImmEndpointWarpJ.so" target-dir="libs/armeabi" />
+    <source-file src="src/android/fyber-adcolony-2.3.6-r2.aar" target-dir="libs" />
     <!-- / AdColony SDK -->
 
   </platform>

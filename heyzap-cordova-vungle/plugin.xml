@@ -22,20 +22,20 @@
         <true/>
       </dict>
     </config-file>
-    
+
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
-    
-    <!-- Vungle SDK -->
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/__vungle.db" />
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_close.png" />
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_cta.png" />
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_off.png" />
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_mute_on.png" />
-    <resource-file src="src/ios/VungleSDK.embeddedframework/Resources/vg_privacy.png" />
 
-    <framework src="src/ios/VungleSDK.embeddedframework/VungleSDK.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- Vungle SDK -->
+    <resource-file src="src/ios/Resources/__vungle.db" />
+    <resource-file src="src/ios/Resources/vg_close.png" />
+    <resource-file src="src/ios/Resources/vg_cta.png" />
+    <resource-file src="src/ios/Resources/vg_mute_off.png" />
+    <resource-file src="src/ios/Resources/vg_mute_on.png" />
+    <resource-file src="src/ios/Resources/vg_privacy.png" />
+
+    <framework src="src/ios/Fyber_Vungle_4.0.6-r2.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / Vungle SDK -->
 
     <!-- External Frameworks -->
@@ -53,8 +53,8 @@
     <framework src="UIKit.framework" />
     <framework src="WebKit.framework" />
 
-    <framework src="libz.dylib" /> 
-    <framework src="libsqlite3.dylib" /> 
+    <framework src="libz.dylib" />
+    <framework src="libsqlite3.dylib" />
     <!-- / External Frameworks -->
 
     <info>
@@ -76,19 +76,20 @@
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </config-file>
     <!-- / Native app manifest -->
-    
+
     <!-- Native app manifest - Application Tag -->
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-      <service android:name="com.vungle.publisher.VungleService"/>
+      <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity"
+android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+      <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
     </config-file>
     <!-- / Native app manifest - Application Tag -->
-    
+
     <!-- Vungle SDK -->
-    <source-file src="src/android/dagger-1.2.2.jar" target-dir="libs" />
+    <source-file src="src/android/dagger-2.4.jar" target-dir="libs" />
     <source-file src="src/android/javax.inject-1.jar" target-dir="libs" />
-    <source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />
-    <source-file src="src/android/vungle-publisher-adaptive-id-3.3.2.jar" target-dir="libs" />
+    <source-file src="src/android/fyber-vungle-4.0.2-r2.jar" target-dir="libs" />
 
     <framework src="com.android.support:support-v4:18.0.0" />
     <!-- / Vungle SDK -->

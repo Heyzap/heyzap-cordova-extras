@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-unityads" version="1.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-unityads" version="1.1.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova UnityAds</name>
   <description>UnityAds Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -14,14 +14,14 @@
 
   <!-- iOS -->
   <platform name="ios">
-    
+
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
-    
+
     <!-- UnityAds SDK -->
-    <resource-file src="src/ios/UnityAds.bundle" />
     <framework src="src/ios/UnityAds.framework" custom="true" compiler-flags="-fmodules" />
+    <framework src="src/ios/Fyber_UnityAds_2.0.2-r1.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / UnityAds SDK -->
 
     <!-- External Frameworks -->
@@ -41,7 +41,7 @@
     <framework src="src/android/unity-ads.gradle" custom="true" type="gradleReference" />
 
     <!-- UnityAds SDK -->
-    <source-file src="src/android/unity-ads-1.5.6.aar" target-dir="libs" />
+    <source-file src="src/android/fyber-unityads-2.0.5-r1.aar" target-dir="libs" />
     <!-- / UnityAds SDK -->
 
   </platform>

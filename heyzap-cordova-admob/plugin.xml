@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-admob" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-admob" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova AdMob</name>
   <description>AdMob Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -22,16 +22,14 @@
         <true/>
       </dict>
     </config-file>
-    
+
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
-    
-    <!-- AdMob SDK -->
-    <header-file src="src/ios/MediationExtras/HZAdMobBannerSupport.h" compiler-flags="-fmodules" />
-    <source-file src="src/ios/MediationExtras/HZAdMobBannerSupport.m" compiler-flags="-fmodules" />
 
-    <framework src="src/ios/GoogleMobileAds.framework" custom="true" compiler-flags="-fmodules" />
+    <!-- AdMob SDK -->
+    <header-file src="src/ios/Resources/FYBAdMob.h" compiler-flags="-fmodules" />
+    <framework src="src/ios/Fyber_AdMob_7.10.0-r1.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / AdMob SDK -->
 
     <!-- External Frameworks -->
@@ -60,24 +58,9 @@
 
   <!-- Android -->
   <platform name="android">
-
-    <!-- Native app manifest -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-      <uses-permission android:name="android.permission.INTERNET" />
-    </config-file>
-    <!-- / Native app manifest -->
-    
-    <!-- Native app manifest - Application Tag -->
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
-      
-      <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-    </config-file>
-    <!-- / Native app manifest - Application Tag -->
-
-    <framework src="com.google.android.gms:play-services:+" />
-
+    <framework src="src/android/admob.gradle" custom="true" type="gradleReference" />
+    <!-- AdMob SDK -->
+    <source-file src="src/android/fyber-admob-9.4.0-r2.aar" target-dir="libs" />
   </platform>
   <!-- / Android -->
 

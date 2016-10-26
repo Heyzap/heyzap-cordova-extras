@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-facebook_audience_network" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-facebook_audience_network" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova Facebook Audience Network</name>
   <description>Facebook Audience Network Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -22,13 +22,13 @@
         <true/>
       </dict>
     </config-file>
-    
+
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
-    
+
     <!-- Facebook Audience Network SDK -->
-    <framework src="src/ios/FBAudienceNetwork.framework" custom="true" compiler-flags="-fmodules" />
+    <framework src="src/ios/Fyber_FacebookAudienceNetwork_4.10.1-r4.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / Facebook Audience Network SDK -->
 
     <!-- External Frameworks -->
@@ -52,24 +52,12 @@
 
   <!-- Android -->
   <platform name="android">
+    <framework src="src/android/facebook-audience-network.gradle" custom="true" type="gradleReference" />
 
-    <!-- Native app manifest -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />       
-      <uses-permission android:name="android.permission.INTERNET" />
-    </config-file>
-    <!-- / Native app manifest -->
-    
-    <!-- Native app manifest - Application Tag -->
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
-    </config-file>
-    <!-- / Native app manifest - Application Tag -->
-    
-    <!-- Facebook Audience Network SDK -->
-    <source-file src="src/android/AudienceNetwork.jar" target-dir="libs" />
-    <!-- / Facebook Audience Network SDK -->
-
+    <!-- Facebook SDK -->
+    <source-file src="src/android/facebookaudiencenetwork-4.10.0.aar" target-dir="libs" />
+    <source-file src="src/android/fyber-facebook-4.10.0-r4.aar" target-dir="libs" />
+      <!-- / Facebook SDK -->
   </platform>
   <!-- / Android -->
 

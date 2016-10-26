@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
   "use strict";
-  
+
   console.log('[Heyzap] - Re-creating symlinks in iOS frameworks.');
 
   var fs, path;
@@ -8,7 +8,7 @@ module.exports = function(ctx) {
   try {
     fs = require('fs');
     path = require('path');
-    
+
   } catch (e) {
     console.warn('[Heyzap] - Could not find "fs" or "path" module(s). Exiting...');
     return;
@@ -21,7 +21,7 @@ module.exports = function(ctx) {
    * @type {Object}
    */
   var FRAMEWORKS_LINKS = {
-    'AdColony.framework': {
+    'Fyber_AdColony_2.6.2-r1.framework': {
       // dest: src
       'Headers': 'Versions/A/Headers',
       'AdColony': 'Versions/A/AdColony',
@@ -64,5 +64,5 @@ module.exports = function(ctx) {
       }
     }
   }
-  
+
 };

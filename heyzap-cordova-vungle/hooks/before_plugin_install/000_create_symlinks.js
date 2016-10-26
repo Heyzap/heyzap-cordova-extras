@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
   "use strict";
-  
+
   console.log('[Heyzap] - Re-creating symlinks in iOS frameworks.');
 
   var fs, path;
@@ -8,7 +8,7 @@ module.exports = function(ctx) {
   try {
     fs = require('fs');
     path = require('path');
-    
+
   } catch (e) {
     console.warn('[Heyzap] - Could not find "fs" or "path" module(s). Exiting...');
     return;
@@ -21,6 +21,12 @@ module.exports = function(ctx) {
    * @type {Object}
    */
   var FRAMEWORKS_LINKS = {
+    'Fyber_Vungle_4.0.6-r2.framework': {
+      // dest: src
+      'Headers': 'Versions/A/Headers',
+      'Fyber_Vungle_4.0.6-r2': 'Versions/A/Fyber_Vungle_4.0.6-r2',
+      'Versions/Current': 'Versions/A'
+    },
   };
 
   var sdkDir = path.join(ctx.opts.plugin.dir, 'src', 'ios');
@@ -58,5 +64,5 @@ module.exports = function(ctx) {
       }
     }
   }
-  
+
 };
