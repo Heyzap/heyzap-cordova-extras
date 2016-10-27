@@ -1,6 +1,6 @@
 {
   "name": "heyzap-cordova-applovin",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "AppLovin Cordova plugin for the Heyzap Cordova Plugin",
   "cordova": {
     "id": "heyzap-cordova-applovin",
