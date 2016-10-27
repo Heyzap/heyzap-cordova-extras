@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
   "use strict";
-  
+
   console.log('[Heyzap] - Re-creating symlinks in iOS frameworks.');
 
   var fs, path;
@@ -8,7 +8,7 @@ module.exports = function(ctx) {
   try {
     fs = require('fs');
     path = require('path');
-    
+
   } catch (e) {
     console.warn('[Heyzap] - Could not find "fs" or "path" module(s). Exiting...');
     return;
@@ -21,6 +21,12 @@ module.exports = function(ctx) {
    * @type {Object}
    */
   var FRAMEWORKS_LINKS = {
+    'UnityAds.framework': { },
+    'Fyber_UnityAds_2.0.2-r1.framework': {
+      'Headers': 'Versions/A/Headers',
+      'Versions/Current': 'Versions/A',
+      'Fyber_UnityAds_2.0.2-r1': 'Versions/A/Fyber_UnityAds_2.0.2-r1'
+    }
   };
 
   var sdkDir = path.join(ctx.opts.plugin.dir, 'src', 'ios');
@@ -58,5 +64,5 @@ module.exports = function(ctx) {
       }
     }
   }
-  
+
 };

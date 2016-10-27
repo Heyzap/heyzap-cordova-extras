@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
   "use strict";
-  
+
   console.log('[Heyzap] - Re-creating symlinks in iOS frameworks.');
 
   var fs, path;
@@ -8,7 +8,7 @@ module.exports = function(ctx) {
   try {
     fs = require('fs');
     path = require('path');
-    
+
   } catch (e) {
     console.warn('[Heyzap] - Could not find "fs" or "path" module(s). Exiting...');
     return;
@@ -21,6 +21,10 @@ module.exports = function(ctx) {
    * @type {Object}
    */
   var FRAMEWORKS_LINKS = {
+    "Fyber_AppLovin_3.4.3-r1.framework": {
+      "Fyber_AppLovin_3.4.3-r1": "Versions/A/Fyber_AppLovin_3.4.3-r1",
+      "Resources": "Versions/A/Resources"
+    }
   };
 
   var sdkDir = path.join(ctx.opts.plugin.dir, 'src', 'ios');
@@ -58,5 +62,5 @@ module.exports = function(ctx) {
       }
     }
   }
-  
+
 };
