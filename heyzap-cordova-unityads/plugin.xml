@@ -21,7 +21,7 @@
 
     <!-- UnityAds SDK -->
     <framework src="src/ios/UnityAds.framework" custom="true" compiler-flags="-fmodules" />
-    <framework src="src/ios/Fyber_UnityAds_2.0.2-r1.framework" custom="true" compiler-flags="-fmodules" />
+    <framework src="src/ios/Fyber_UnityAds_2.0.5-r2.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / UnityAds SDK -->
 
     <!-- External Frameworks -->
