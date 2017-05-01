@@ -22,10 +22,10 @@ module.exports = function(ctx) {
    */
   var FRAMEWORKS_LINKS = {
     'UnityAds.framework': { },
-    'Fyber_UnityAds_2.0.5-r2.framework': {
+    'Fyber_UnityAds_2.0.2-r2.framework': {
       'Headers': 'Versions/A/Headers',
       'Versions/Current': 'Versions/A',
-      'Fyber_UnityAds_2.0.5-r2': 'Versions/A/Fyber_UnityAds_2.0.5-r2'
+      'Fyber_UnityAds_2.0.2-r2': 'Versions/A/Fyber_UnityAds_2.0.5-r2'
     }
   };
 
