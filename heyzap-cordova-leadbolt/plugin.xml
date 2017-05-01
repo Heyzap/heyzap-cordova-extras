@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-leadbolt" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-leadbolt" version="1.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova Leadbolt</name>
   <description>Leadbolt Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -28,8 +28,7 @@
     <!-- / Hooks -->
     
     <!-- Leadbolt SDK -->
-    <header-file src="src/ios/AppTracker.h" />
-    <source-file src="src/ios/libAppTracker.a" framework="true" />
+    <framework src="src/ios/AppTracker.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / Leadbolt SDK -->
 
     <!-- External Frameworks -->

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-applovin" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-applovin" version="1.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova AppLovin</name>
   <description>AppLovin Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -20,34 +20,7 @@
     <!-- / Hooks -->
     
     <!-- AppLovin SDK -->
-    <header-file src="src/ios/headers/ALAd.h" />
-    <header-file src="src/ios/headers/ALAdDisplayDelegate.h" />
-    <header-file src="src/ios/headers/ALAdLoadDelegate.h" />
-    <header-file src="src/ios/headers/ALAdRewardDelegate.h" />
-    <header-file src="src/ios/headers/ALAdService.h" />
-    <header-file src="src/ios/headers/ALAdSize.h" />
-    <header-file src="src/ios/headers/ALAdType.h" />
-    <header-file src="src/ios/headers/ALAdUpdateDelegate.h" />
-    <header-file src="src/ios/headers/ALAdVideoPlaybackDelegate.h" />
-    <header-file src="src/ios/headers/ALAdView.h" />
-    <header-file src="src/ios/headers/ALErrorCodes.h" />
-    <header-file src="src/ios/headers/ALEventService.h" />
-    <header-file src="src/ios/headers/ALEventTypes.h" />
-    <header-file src="src/ios/headers/ALIncentivizedInterstitialAd.h" />
-    <header-file src="src/ios/headers/ALInterstitialAd.h" />
-    <header-file src="src/ios/headers/ALNativeAd.h" />
-    <header-file src="src/ios/headers/ALNativeAdLoadDelegate.h" />
-    <header-file src="src/ios/headers/ALNativeAdPrecacheDelegate.h" />
-    <header-file src="src/ios/headers/ALNativeAdService.h" />
-    <header-file src="src/ios/headers/ALNullabilityAnnotations.h" />
-    <header-file src="src/ios/headers/ALPostbackDelegate.h" />
-    <header-file src="src/ios/headers/ALPostbackService.h" />
-    <header-file src="src/ios/headers/ALSdk.h" />
-    <header-file src="src/ios/headers/ALSdkSettings.h" />
-    <header-file src="src/ios/headers/ALSwiftHeaders.h" />
-    <header-file src="src/ios/headers/ALTargetingData.h" />
-
-    <source-file src="src/ios/libAppLovinSdk.a" framework="true" />
+    <framework src="src/ios/AppLovinSDK.framework" custom="true" compiler-flags="-fmodules" />
     <!-- / AppLovin SDK -->
 
     <!-- External Frameworks -->

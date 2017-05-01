@@ -5,7 +5,7 @@ This is a custom Apache Cordova plugin for AdColony to be used with the [Heyzap 
 
 SDK Verisons
 ------------
-- iOS: 2.6.0
+- iOS: 3.1.1
 - Android: 2.2.2
 
 Installing

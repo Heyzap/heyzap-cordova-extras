@@ -1,4 +1,4 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+// Copyright 2004-present Facebook. All Rights Reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -19,49 +19,44 @@
 #import <StoreKit/StoreKit.h>
 #import <UIKit/UIKit.h>
 
-#import "FBAdDefines.h"
+#import <FBAudienceNetwork/FBAdDefines.h>
 
-/*!
- @typedef FBAdSize
+NS_ASSUME_NONNULL_BEGIN
 
- @abstract
- Represents the ad size.
- */
-typedef struct FBAdSize {
-  CGSize size;
-} FBAdSize;
+/// Represents the ad size.
+struct FBAdSize {
+    CGSize size;
+};
 
-/*!
- @abstract DEPRECATED - Represents the fixed banner ad size - 320pt by 50pt.
+/// Represents the ad size.
+typedef struct FBAdSize FBAdSize;
+
+/**
+  DEPRECATED - Represents the fixed banner ad size - 320pt by 50pt.
  */
 FB_EXPORT FBAdSize const kFBAdSize320x50;
 
-/*!
- @abstract Represents the flexible banner ad size, where banner width depends on
+/**
+  Represents the flexible banner ad size, where banner width depends on
  its container width, and banner height is fixed as 50pt.
  */
 FB_EXPORT FBAdSize const kFBAdSizeHeight50Banner;
 
-/*!
- @abstract Represents the flexible banner ad size, where banner width depends on
+/**
+  Represents the flexible banner ad size, where banner width depends on
  its container width, and banner height is fixed as 90pt.
  */
 FB_EXPORT FBAdSize const kFBAdSizeHeight90Banner;
 
-/*!
- @abstract Represents the interstitial ad size.
+/**
+  Represents the interstitial ad size.
  */
-FB_EXPORT FBAdSize const kFBAdSizeInterstital;
+FB_EXPORT FBAdSize const kFBAdSizeInterstitial;
 
-/*!
- @abstract Represents the flexible rectangle ad size, where width depends on
+/**
+  Represents the flexible rectangle ad size, where width depends on
  its container width, and height is fixed as 250pt.
  */
 FB_EXPORT FBAdSize const kFBAdSizeHeight250Rectangle;
 
-FB_CLASS_EXPORT
-@interface FBAdCustomSize : NSObject
-
-+ (FBAdSize)customSize:(CGSize)size;
-
-@end
+NS_ASSUME_NONNULL_END

@@ -5,7 +5,7 @@ This is a custom Apache Cordova plugin for UnityAds to be used with the [Heyzap 
 
 SDK Verisons
 ------------
-- iOS: 1.5.2
+- iOS: 2.1.0
 - Android: 4.0.1
 
 Installing:
