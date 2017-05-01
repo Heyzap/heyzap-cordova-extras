@@ -1,6 +1,6 @@
 {
   "name": "heyzap-cordova-vungle",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "Vungle Cordova plugin for the Heyzap Cordova Plugin",
   "cordova": {
     "id": "heyzap-cordova-vungle",

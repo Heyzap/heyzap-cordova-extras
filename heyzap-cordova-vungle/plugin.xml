@@ -87,9 +87,9 @@ android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@an
     <!-- / Native app manifest - Application Tag -->
 
     <!-- Vungle SDK -->
-    <source-file src="src/android/dagger-2.7.jar" target-dir="libs" />
+    <source-file src="src/android/dagger-2.4.jar" target-dir="libs" />
     <source-file src="src/android/javax.inject-1.jar" target-dir="libs" />
-    <source-file src="src/android/fyber-vungle-4.0.3-r1.jar" target-dir="libs" />
+    <source-file src="src/android/fyber-vungle-4.0.2-r2.jar" target-dir="libs" />
 
     <framework src="com.android.support:support-v4:18.0.0" />
     <!-- / Vungle SDK -->
