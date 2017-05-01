@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
   "use strict";
-
+  
   console.log('[Heyzap] - Re-creating symlinks in iOS frameworks.');
 
   var fs, path;
@@ -8,7 +8,7 @@ module.exports = function(ctx) {
   try {
     fs = require('fs');
     path = require('path');
-
+    
   } catch (e) {
     console.warn('[Heyzap] - Could not find "fs" or "path" module(s). Exiting...');
     return;
@@ -21,10 +21,10 @@ module.exports = function(ctx) {
    * @type {Object}
    */
   var FRAMEWORKS_LINKS = {
-    'Fyber_AdMob_7.10.0-r1.framework': {
+    'GoogleMobileAds.framework': {
       // dest: src
       'Headers': 'Versions/A/Headers',
-      'GoogleMobileAds': 'Versions/A/Fyber_AdMob_7.10.0-r1',
+      'GoogleMobileAds': 'Versions/A/GoogleMobileAds',
       'Versions/Current': 'Versions/A'
     }
   };
@@ -64,5 +64,5 @@ module.exports = function(ctx) {
       }
     }
   }
-
+  
 };

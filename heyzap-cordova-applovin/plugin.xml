@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="heyzap-cordova-applovin" version="1.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="heyzap-cordova-applovin" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>Heyzap Cordova AppLovin</name>
   <description>AppLovin Cordova plugin for the Heyzap Cordova Plugin</description>
@@ -12,17 +12,43 @@
     <engine name="cordova-ios" version=">=3.8.0" />
   </engines>
 
-  <preference name="APPLOVIN_ANDROID_SDK_KEY" />
-
   <!-- iOS -->
   <platform name="ios">
-
+    
     <!-- Hooks -->
     <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
     <!-- / Hooks -->
+    
+    <!-- AppLovin SDK -->
+    <header-file src="src/ios/headers/ALAd.h" />
+    <header-file src="src/ios/headers/ALAdDisplayDelegate.h" />
+    <header-file src="src/ios/headers/ALAdLoadDelegate.h" />
+    <header-file src="src/ios/headers/ALAdRewardDelegate.h" />
+    <header-file src="src/ios/headers/ALAdService.h" />
+    <header-file src="src/ios/headers/ALAdSize.h" />
+    <header-file src="src/ios/headers/ALAdType.h" />
+    <header-file src="src/ios/headers/ALAdUpdateDelegate.h" />
+    <header-file src="src/ios/headers/ALAdVideoPlaybackDelegate.h" />
+    <header-file src="src/ios/headers/ALAdView.h" />
+    <header-file src="src/ios/headers/ALErrorCodes.h" />
+    <header-file src="src/ios/headers/ALEventService.h" />
+    <header-file src="src/ios/headers/ALEventTypes.h" />
+    <header-file src="src/ios/headers/ALIncentivizedInterstitialAd.h" />
+    <header-file src="src/ios/headers/ALInterstitialAd.h" />
+    <header-file src="src/ios/headers/ALNativeAd.h" />
+    <header-file src="src/ios/headers/ALNativeAdLoadDelegate.h" />
+    <header-file src="src/ios/headers/ALNativeAdPrecacheDelegate.h" />
+    <header-file src="src/ios/headers/ALNativeAdService.h" />
+    <header-file src="src/ios/headers/ALNullabilityAnnotations.h" />
+    <header-file src="src/ios/headers/ALPostbackDelegate.h" />
+    <header-file src="src/ios/headers/ALPostbackService.h" />
+    <header-file src="src/ios/headers/ALSdk.h" />
+    <header-file src="src/ios/headers/ALSdkSettings.h" />
+    <header-file src="src/ios/headers/ALSwiftHeaders.h" />
+    <header-file src="src/ios/headers/ALTargetingData.h" />
 
+    <source-file src="src/ios/libAppLovinSdk.a" framework="true" />
     <!-- / AppLovin SDK -->
-    <framework src="src/ios/Fyber_AppLovin_3.4.3-r1.framework" custom="true" />
 
     <!-- External Frameworks -->
     <framework src="AdSupport.framework" />
@@ -41,17 +67,26 @@
 
   <!-- Android -->
   <platform name="android">
+
+    <!-- Native app manifest -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+    <!-- / Native app manifest -->
+    
+    <!-- Native app manifest - Application Tag -->
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_sdk_key" />
+      <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" />
+      <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" />
     </config-file>
-
-    <config-file parent="/resources" target="./res/values/strings.xml">
-        <string name="applovin_sdk_key">$APPLOVIN_ANDROID_SDK_KEY</string>
-    </config-file>
-
-    <framework src="src/android/applovin.gradle" custom="true" type="gradleReference" />
-    <!-- Applovin SDK -->
-    <source-file src="src/android/fyber-applovin-6.3.2-r1.aar" target-dir="libs" />
+    <!-- / Native app manifest - Application Tag -->
+    
+    <!-- AppLovin SDK -->
+    <source-file src="src/android/applovin-sdk-6.1.5.jar" target-dir="libs" />
     <!-- / AppLovin SDK -->
 
   </platform>
