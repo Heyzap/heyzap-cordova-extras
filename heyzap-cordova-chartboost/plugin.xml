@@ -63,7 +63,7 @@
     <!-- / Native app manifest - Application Tag -->
     
     <!-- Chartboost SDK -->
-    <source-file src="src/android/chartboost.jar" target-dir="libs" />
+    <source-file src="src/android/chartboost-6.6.3.jar" target-dir="libs" />
 
     <framework src="com.google.android.gms:play-services:+" />
     <!-- / Chartboost SDK -->
