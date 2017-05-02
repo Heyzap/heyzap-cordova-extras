@@ -53,11 +53,13 @@
     <framework src="MessageUI.framework" />
     <framework src="QuartzCore.framework" />
     <framework src="SystemConfiguration.framework" />
+    <framework src="JavaScriptCore.framework" />
 
     <framework src="AdSupport.framework" weak="true" />
     <framework src="Social.framework" weak="true" />
     <framework src="StoreKit.framework" weak="true" />
     <framework src="WebKit.framework" weak="true" />
+    <framework src="WatchConnectivity.framework" weak="true" />
 
     <framework src="libz.dylib"/>
     <!-- / External Frameworks -->

@@ -33,6 +33,7 @@
     <framework src="StoreKit.framework" />
     <framework src="SystemConfiguration.framework" />
     <framework src="UIKit.framework" />
+    <framework src="WebKit.framework" />
     <!-- / External Frameworks -->
 
   </platform>

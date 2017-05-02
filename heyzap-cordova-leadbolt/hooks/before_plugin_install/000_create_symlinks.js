@@ -24,7 +24,7 @@ module.exports = function(ctx) {
     'FBAudienceNetwork.framework': {
       // dest: src
       'Headers': 'Versions/A/Headers',
-      'FBAudienceNetwork': 'Versions/A/FBAudienceNetwork',
+      'FBAudienceNetwork': 'Versions/A/AppTracker',
       'Versions/Current': 'Versions/A'
     }
   };

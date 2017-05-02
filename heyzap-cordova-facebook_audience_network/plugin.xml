@@ -45,6 +45,13 @@
     <framework src="StoreKit.framework" />
     <framework src="SystemConfiguration.framework" />
     <framework src="UIKit.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="SafariServices.framework" />
+    <framework src="WebKit.framework" />
+    <framework src="VideoToolbox.framework" />
+
+    <framework src="libxml2.dylib"/>
+    <framework src="libc++.dylib" />
     <!-- / External Frameworks -->
 
   </platform>
