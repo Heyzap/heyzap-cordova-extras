@@ -60,21 +60,13 @@
   <!-- Android -->
   <platform name="android">
 
-    <!-- Native app manifest -->
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />       
-      <uses-permission android:name="android.permission.INTERNET" />
-    </config-file>
-    <!-- / Native app manifest -->
-    
     <!-- Native app manifest - Application Tag -->
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
     </config-file>
     <!-- / Native app manifest - Application Tag -->
-    
     <!-- Facebook Audience Network SDK -->
-    <source-file src="src/android/AudienceNetwork.jar" target-dir="libs" />
+    <framework src="com.facebook.android:audience-network-sdk:4.22.0" />
     <!-- / Facebook Audience Network SDK -->
 
   </platform>
