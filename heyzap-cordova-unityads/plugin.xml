@@ -40,7 +40,7 @@
     <framework src="src/android/unity-ads.gradle" custom="true" type="gradleReference" />
 
     <!-- UnityAds SDK -->
-    <source-file src="src/android/unity-ads-1.5.6.aar" target-dir="libs" />
+    <source-file src="src/android/unity-ads.aar" target-dir="libs" />
     <!-- / UnityAds SDK -->
 
   </platform>

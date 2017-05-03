@@ -6,7 +6,7 @@ repositories{
 }
 
 dependencies {
-   compile(name:'unity-ads-1.5.6', ext:'aar')
+   compile(name:'unity-ads', ext:'aar')
 }
 
 android {
