@@ -6,7 +6,7 @@ This is a custom Apache Cordova plugin for Facebook Audience Network to be used 
 SDK Verisons
 ------------
 - iOS: 4.22.0
-- Android: 4.6.0
+- Android: 4.22.0
 
 Installing:
 ```
