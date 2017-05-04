@@ -5,15 +5,13 @@ This is a custom Apache Cordova plugin for AppLovin to be used with the [Heyzap 
 
 SDK Verisons
 ------------
-- iOS: 3.1.5
+- iOS: 3.5.2
 - Android: 6.1.4
 
 Installing:
 ```
-cordova plugin add https://github.com/Heyzap/heyzap-cordova-extras.git#:heyzap-cordova-applovin  --variable APPLOVIN_ANDROID_SDK_KEY=**YOUR APPLOVIN SDK KEY HERE**
+cordova plugin add https://github.com/Heyzap/heyzap-cordova-extras.git#:heyzap-cordova-applovin
 ```
-
-*Note* If you are only using iOS, the plugin will still ask you to add the APPLOVIN_ANDROID_SDK_KEY value. In this case, provide whatever value you want as it won't affect your integration.
 
 Supported Platforms
 -------------------
