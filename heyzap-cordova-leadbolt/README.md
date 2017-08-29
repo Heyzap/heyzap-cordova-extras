@@ -5,7 +5,7 @@ This is a custom Apache Cordova plugin for Leadbolt to be used with the [Heyzap 
 
 SDK Verisons
 ------------
-- iOS: 8.1a
+- iOS: 8.2
 - Android: 8.1a
 
 Installing:
