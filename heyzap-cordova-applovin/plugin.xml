@@ -60,7 +60,7 @@
     <!-- / Native app manifest - Application Tag -->
     
     <!-- AppLovin SDK -->
-    <source-file src="src/android/applovin-sdk-6.4.2.jar" target-dir="libs" />
+    <source-file src="src/android/applovin-sdk-7.3.2.jar" target-dir="libs" />
     <!-- / AppLovin SDK -->
 
   </platform>
