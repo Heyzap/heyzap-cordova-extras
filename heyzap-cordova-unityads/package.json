@@ -1,6 +1,6 @@
 {
   "name": "heyzap-cordova-unityads",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "UnityAds Cordova plugin for the Heyzap Cordova Plugin",
   "cordova": {
     "id": "heyzap-cordova-unityads",
