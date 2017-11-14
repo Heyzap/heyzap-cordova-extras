@@ -1,6 +1,6 @@
 {
   "name": "heyzap-cordova-facebook_audience_network",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Facebook Audience Network Cordova plugin for the Heyzap Cordova Plugin",
   "cordova": {
     "id": "heyzap-cordova-facebook_audience_network",
