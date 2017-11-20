@@ -1,3 +1,24 @@
+# November 2017 Update
+
+This repo is now deprecated in favor of separated repos for each network; Cordova 7 no longer supports subfolders. 
+
+Here is a list of the other repositories:
+
+* [AdMob](https://github.com/Heyzap/heyzap-cordova-admob)
+* [AdColony](https://github.com/Heyzap/heyzap-cordova-adcolony)
+* [AppLovin](https://github.com/Heyzap/heyzap-cordova-applovin)
+* [Chartboost](https://github.com/Heyzap/heyzap-cordova-chartboost)
+* [Facebook Audience Network](https://github.com/Heyzap/heyzap-cordova-facebook_audience_network)
+* [Leadbolt](https://github.com/Heyzap/heyzap-cordova-leadbolt)
+* [UnityAds](https://github.com/Heyzap/heyzap-cordova-unityads)
+* [Vungle](https://github.com/Heyzap/heyzap-cordova-vungle)
+
+
+The rest of the repo will be left alone for users still utilizing it, but all future updates will occur on the above.
+
+
+----------------
+
 Heyzap Cordova Plugin Extras
 ============================
 
